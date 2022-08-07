@@ -15,6 +15,20 @@
                                 Heart Attack Monitoring
                             </h2>
                         </div>
+
+                        {{-- <p> {{ auth()->user()->login_as }}  </p> --}}
+                        @if( auth()->user()->login_as =="Penderita")
+                            <p>Menu Penderita untuk device_id {{auth()->user()->device_id}}</p>
+                        @endif
+
+                        @if( auth()->user()->login_as =="Keluarga")
+                            <p>Menu Keluarga untuk device_id {{auth()->user()->device_id}}</p>
+                        @endif
+
+                        @if( auth()->user()->login_as =="Rumah Sakit")
+                            <p>Menu Rumah Sakit untuk device_id {{auth()->user()->device_id}}</p>   
+                        @endif
+
                         <div class="text-center" id="warning"  style="display: none">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="red"
                                 class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
@@ -30,11 +44,15 @@
                         </div>
 
                         <div class="card m-b-2 mx-auto col-md-6 mt-4 text-white">
+                            @if( auth()->user()->login_as =="Penderita")
                             <div class="card-body" id="bpmContainer">
                                 <h4 style="font-size: 15px;" id="bpm">
 
                                 </h4>
                             </div>
+                        @endif
+
+                        
                         </div>
                         <div class="card m-b-2 mx-auto bg-danger mt-4 text-white" id="mapContainer" style="display: none">
                             <div class="card-body">
@@ -101,7 +119,7 @@
             $.get("api/getData/" + id, function(data, status) {
                 console.log(data)
                 bpm.innerHTML = data.bpm +" BPM";
-                if (data.bpm > 150 || data.bpm < 60) {
+                if ((data.bpm > 150 || data.bpm < 60)&& data.tombol = 1) {
                     warning.style.display = 'block';
                     normal.style.display = 'none';
                     bpmContainer.style.backgroundColor = 'red'

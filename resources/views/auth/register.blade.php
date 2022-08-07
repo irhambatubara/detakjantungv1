@@ -23,7 +23,22 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="row mb-3">
+                                <label for="login_as" class="col-md-4 col-form-label text-md-end">{{ __('Login Sebagai') }}</label>
 
+                                <div class="col-md-6">
+                                    <select name="login_as" id="login_as">
+                                        <option value="Penderita">Penderita</option>
+                                        <option value="Keluarga">Keluarga</option>
+                                        <option value="Rumah Sakit">Rumah Sakit</option>
+                                      </select>
+                                    @error('login_as')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 

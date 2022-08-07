@@ -14,7 +14,7 @@ class AddDeviceIdToUser extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('device_id')->unique();
+            $table->string('device_id');
         });
     }
 
