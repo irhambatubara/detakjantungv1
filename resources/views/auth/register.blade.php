@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="margin-top:5%">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Register') }}</div>
@@ -24,9 +24,9 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="login_as" class="col-md-4 col-form-label text-md-end">{{ __('Login Sebagai') }}</label>
+                                <label for="login_as" class="bg-light col-md-4 col-form-label text-md-end">{{ __('Login Sebagai') }}</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 bg-light">
                                     <select name="login_as" id="login_as">
                                         <option value="Penderita">Penderita</option>
                                         <option value="Keluarga">Keluarga</option>

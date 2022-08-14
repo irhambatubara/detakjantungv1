@@ -11,7 +11,7 @@
 
                             <p class="login100-form-title p-b-53" style="font-size: 18px;">
                             <h4>Hasil Monitoring</h4>
-                            User Budi
+                            User Sultan
                             </p>
                         </div>
 
